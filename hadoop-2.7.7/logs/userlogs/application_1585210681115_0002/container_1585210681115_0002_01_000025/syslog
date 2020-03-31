@@ -1,0 +1,56 @@
+2020-03-26 16:19:38,018 INFO [main] org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2020-03-26 16:19:38,060 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2020-03-26 16:19:38,060 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: ReduceTask metrics system started
+2020-03-26 16:19:38,067 INFO [main] org.apache.hadoop.mapred.YarnChild: Executing with tokens:
+2020-03-26 16:19:38,067 INFO [main] org.apache.hadoop.mapred.YarnChild: Kind: mapreduce.job, Service: job_1585210681115_0002, Ident: (org.apache.hadoop.mapreduce.security.token.JobTokenIdentifier@c88a337)
+2020-03-26 16:19:38,191 INFO [main] org.apache.hadoop.mapred.YarnChild: Sleeping for 0ms before retrying again. Got null now.
+2020-03-26 16:19:38,324 INFO [main] org.apache.hadoop.mapred.YarnChild: mapreduce.cluster.local.dir for child: /home/xidian/tmp/nm-local-dir/usercache/xidian/appcache/application_1585210681115_0002
+2020-03-26 16:19:38,452 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: session.id is deprecated. Instead, use dfs.metrics.session-id
+2020-03-26 16:19:38,720 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: File Output Committer Algorithm version is 1
+2020-03-26 16:19:38,728 INFO [main] org.apache.hadoop.mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2020-03-26 16:19:38,762 INFO [main] org.apache.hadoop.mapred.ReduceTask: Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@17a87e37
+2020-03-26 16:19:40,032 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+2020-03-26 16:19:40,318 INFO [main] org.apache.hadoop.mapred.Task: Task:attempt_1585210681115_0002_r_000003_0 is done. And is in the process of committing
+2020-03-26 16:19:40,357 INFO [main] org.apache.hadoop.mapred.Task: Task attempt_1585210681115_0002_r_000003_0 is allowed to commit now
+2020-03-26 16:19:40,396 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Saved output of task 'attempt_1585210681115_0002_r_000003_0' to hdfs://localhost:9000/output/Trip3/_temporary/1/task_1585210681115_0002_r_000003
+2020-03-26 16:19:40,429 INFO [main] org.apache.hadoop.mapred.Task: Task 'attempt_1585210681115_0002_r_000003_0' done.
+2020-03-26 16:19:40,433 INFO [main] org.apache.hadoop.mapred.Task: Final Counters for attempt_1585210681115_0002_r_000003_0: Counters: 32
+	File System Counters
+		FILE: Number of bytes read=860
+		FILE: Number of bytes written=123813
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=0
+		HDFS: Number of bytes written=83
+		HDFS: Number of read operations=3
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Map-Reduce Framework
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=5
+		Reduce shuffle bytes=974
+		Reduce input records=55
+		Reduce output records=5
+		Spilled Records=55
+		Shuffled Maps =20
+		Failed Shuffles=0
+		Merged Map outputs=20
+		GC time elapsed (ms)=37
+		CPU time spent (ms)=870
+		Physical memory (bytes) snapshot=172064768
+		Virtual memory (bytes) snapshot=1988374528
+		Total committed heap usage (bytes)=116916224
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Output Format Counters 
+		Bytes Written=83
+2020-03-26 16:19:40,434 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Stopping ReduceTask metrics system...
+2020-03-26 16:19:40,434 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: ReduceTask metrics system stopped.
+2020-03-26 16:19:40,434 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: ReduceTask metrics system shutdown complete.

@@ -1,0 +1,89 @@
+2020-03-26 11:07:33,418 INFO [main] org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2020-03-26 11:07:33,521 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2020-03-26 11:07:33,521 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: MapTask metrics system started
+2020-03-26 11:07:33,547 INFO [main] org.apache.hadoop.mapred.YarnChild: Executing with tokens:
+2020-03-26 11:07:33,547 INFO [main] org.apache.hadoop.mapred.YarnChild: Kind: mapreduce.job, Service: job_1585219068220_0004, Ident: (org.apache.hadoop.mapreduce.security.token.JobTokenIdentifier@6283d8b8)
+2020-03-26 11:07:33,814 INFO [main] org.apache.hadoop.mapred.YarnChild: Sleeping for 0ms before retrying again. Got null now.
+2020-03-26 11:07:34,161 INFO [main] org.apache.hadoop.mapred.YarnChild: mapreduce.cluster.local.dir for child: /home/xidian/tmp/nm-local-dir/usercache/xidian/appcache/application_1585219068220_0004
+2020-03-26 11:07:34,423 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: session.id is deprecated. Instead, use dfs.metrics.session-id
+2020-03-26 11:07:34,763 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: File Output Committer Algorithm version is 1
+2020-03-26 11:07:34,777 INFO [main] org.apache.hadoop.mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2020-03-26 11:07:34,909 INFO [main] org.apache.hadoop.mapred.MapTask: Processing split: hdfs://localhost:9000/input/trip_jan.txt:1610612736+134217728
+2020-03-26 11:07:34,983 INFO [main] org.apache.hadoop.mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2020-03-26 11:07:34,984 INFO [main] org.apache.hadoop.mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2020-03-26 11:07:34,984 INFO [main] org.apache.hadoop.mapred.MapTask: soft limit at 83886080
+2020-03-26 11:07:34,984 INFO [main] org.apache.hadoop.mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2020-03-26 11:07:34,984 INFO [main] org.apache.hadoop.mapred.MapTask: kvstart = 26214396; length = 6553600
+2020-03-26 11:07:34,987 INFO [main] org.apache.hadoop.mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2020-03-26 11:07:36,817 INFO [main] org.apache.hadoop.mapred.MapTask: Spilling map output
+2020-03-26 11:07:36,817 INFO [main] org.apache.hadoop.mapred.MapTask: bufstart = 0; bufend = 39356777; bufvoid = 104857600
+2020-03-26 11:07:36,817 INFO [main] org.apache.hadoop.mapred.MapTask: kvstart = 26214396(104857584); kvend = 15082076(60328304); length = 11132321/6553600
+2020-03-26 11:07:36,817 INFO [main] org.apache.hadoop.mapred.MapTask: (EQUATOR) 49842532 kvi 12460628(49842512)
+2020-03-26 11:07:40,734 INFO [SpillThread] org.apache.hadoop.mapred.MapTask: Finished spill 0
+2020-03-26 11:07:40,734 INFO [main] org.apache.hadoop.mapred.MapTask: (RESET) equator 49842532 kv 12460628(49842512) kvi 9839200(39356800)
+2020-03-26 11:07:41,574 INFO [main] org.apache.hadoop.mapred.MapTask: Spilling map output
+2020-03-26 11:07:41,574 INFO [main] org.apache.hadoop.mapred.MapTask: bufstart = 49842532; bufend = 89193880; bufvoid = 104857600
+2020-03-26 11:07:41,574 INFO [main] org.apache.hadoop.mapred.MapTask: kvstart = 12460628(49842512); kvend = 1326952(5307808); length = 11133677/6553600
+2020-03-26 11:07:41,574 INFO [main] org.apache.hadoop.mapred.MapTask: (EQUATOR) 99679636 kvi 24919904(99679616)
+2020-03-26 11:07:44,939 INFO [SpillThread] org.apache.hadoop.mapred.MapTask: Finished spill 1
+2020-03-26 11:07:44,939 INFO [main] org.apache.hadoop.mapred.MapTask: (RESET) equator 99679636 kv 24919904(99679616) kvi 22298476(89193904)
+2020-03-26 11:07:45,753 INFO [main] org.apache.hadoop.mapred.MapTask: Spilling map output
+2020-03-26 11:07:45,753 INFO [main] org.apache.hadoop.mapred.MapTask: bufstart = 99679636; bufend = 34181212; bufvoid = 104857599
+2020-03-26 11:07:45,753 INFO [main] org.apache.hadoop.mapred.MapTask: kvstart = 24919904(99679616); kvend = 13788180(55152720); length = 11131725/6553600
+2020-03-26 11:07:45,753 INFO [main] org.apache.hadoop.mapred.MapTask: (EQUATOR) 44666958 kvi 11166732(44666928)
+2020-03-26 11:07:48,993 INFO [SpillThread] org.apache.hadoop.mapred.MapTask: Finished spill 2
+2020-03-26 11:07:48,994 INFO [main] org.apache.hadoop.mapred.MapTask: (RESET) equator 44666958 kv 11166732(44666928) kvi 8545308(34181232)
+2020-03-26 11:07:49,811 INFO [main] org.apache.hadoop.mapred.MapTask: Starting flush of map output
+2020-03-26 11:07:49,811 INFO [main] org.apache.hadoop.mapred.MapTask: Spilling map output
+2020-03-26 11:07:49,811 INFO [main] org.apache.hadoop.mapred.MapTask: bufstart = 44666958; bufend = 82075436; bufvoid = 104857600
+2020-03-26 11:07:49,811 INFO [main] org.apache.hadoop.mapred.MapTask: kvstart = 11166732(44666928); kvend = 582548(2330192); length = 10584185/6553600
+2020-03-26 11:07:52,749 INFO [main] org.apache.hadoop.mapred.MapTask: Finished spill 3
+2020-03-26 11:07:52,786 INFO [main] org.apache.hadoop.mapred.Merger: Merging 4 sorted segments
+2020-03-26 11:07:52,847 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 4 segments left of total size: 4775358 bytes
+2020-03-26 11:07:53,026 INFO [main] org.apache.hadoop.mapred.Merger: Merging 4 sorted segments
+2020-03-26 11:07:53,027 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 4 segments left of total size: 4780722 bytes
+2020-03-26 11:07:53,206 INFO [main] org.apache.hadoop.mapred.Merger: Merging 4 sorted segments
+2020-03-26 11:07:53,206 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 4 segments left of total size: 4779403 bytes
+2020-03-26 11:07:53,308 INFO [main] org.apache.hadoop.mapred.Merger: Merging 4 sorted segments
+2020-03-26 11:07:53,309 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 4 segments left of total size: 4781811 bytes
+2020-03-26 11:07:53,412 INFO [main] org.apache.hadoop.mapred.Merger: Merging 4 sorted segments
+2020-03-26 11:07:53,412 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 4 segments left of total size: 4780858 bytes
+2020-03-26 11:07:53,515 INFO [main] org.apache.hadoop.mapred.Merger: Merging 4 sorted segments
+2020-03-26 11:07:53,516 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 4 segments left of total size: 4784999 bytes
+2020-03-26 11:07:53,621 INFO [main] org.apache.hadoop.mapred.Merger: Merging 4 sorted segments
+2020-03-26 11:07:53,622 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 4 segments left of total size: 4780446 bytes
+2020-03-26 11:07:53,768 INFO [main] org.apache.hadoop.mapred.Task: Task:attempt_1585219068220_0004_m_000013_0 is done. And is in the process of committing
+2020-03-26 11:07:53,778 INFO [main] org.apache.hadoop.mapred.Task: Task 'attempt_1585219068220_0004_m_000013_0' done.
+2020-03-26 11:07:53,781 INFO [main] org.apache.hadoop.mapred.Task: Final Counters for attempt_1585219068220_0004_m_000013_0: Counters: 26
+	File System Counters
+		FILE: Number of bytes read=33505714
+		FILE: Number of bytes written=45661586
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=134221929
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=3
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=733032
+		Map output records=10995480
+		Map output bytes=155475778
+		Map output materialized bytes=12073387
+		Input split bytes=105
+		Combine input records=12450047
+		Combine output records=1986986
+		Spilled Records=1986986
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=783
+		CPU time spent (ms)=25570
+		Physical memory (bytes) snapshot=283664384
+		Virtual memory (bytes) snapshot=1819201536
+		Total committed heap usage (bytes)=209190912
+	File Input Format Counters 
+		Bytes Read=134221824
+2020-03-26 11:07:53,881 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Stopping MapTask metrics system...
+2020-03-26 11:07:53,882 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: MapTask metrics system stopped.
+2020-03-26 11:07:53,882 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: MapTask metrics system shutdown complete.

@@ -1,0 +1,23 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f493f0eab5b, pid=8, tid=0x00007f4938f8bae8
+#
+# JRE version: OpenJDK Runtime Environment (8.0_212-b04) (build 1.8.0_212-b04)
+# Java VM: OpenJDK 64-Bit Server VM (25.212-b04 mixed mode linux-amd64 compressed oops)
+# Derivative: IcedTea 3.12.0
+# Distribution: Custom build (Mon May  6 07:45:08 UTC 2019)
+# Problematic frame:
+# C  [libhadoop.so.1.0.0+0x5b5b]  terror+0xb
+#
+# Core dump written. Default location: //core or core.8
+#
+# An error report file with more information is saved as:
+# //hs_err_pid8.log
+#
+# If you would like to submit a bug report, please include
+# instructions on how to reproduce the bug and visit:
+#   https://icedtea.classpath.org/bugzilla
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#

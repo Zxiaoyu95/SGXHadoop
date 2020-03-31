@@ -1,0 +1,143 @@
+2020-03-26 11:06:44,635 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: MergerManager: memoryLimit=130652568, maxSingleShuffleLimit=32663142, mergeThreshold=86230696, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+2020-03-26 11:06:44,637 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+2020-03-26 11:06:44,641 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:06:44,641 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:06:44,642 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 6 new map-outputs
+2020-03-26 11:06:45,047 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000001_0 sent hash and received reply
+2020-03-26 11:06:45,050 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000001_0 decomp: 1707999 len: 1708003 to MEMORY
+2020-03-26 11:06:45,052 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 1707999 bytes from map-output for attempt_1585219068220_0004_m_000001_0
+2020-03-26 11:06:45,054 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 1707999, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->1707999
+2020-03-26 11:06:45,137 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 496ms
+2020-03-26 11:06:45,137 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 5 to fetcher#1
+2020-03-26 11:06:45,137 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 5 of 5 to dell:13562 to fetcher#1
+2020-03-26 11:06:45,140 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000002_0,attempt_1585219068220_0004_m_000005_0,attempt_1585219068220_0004_m_000003_0,attempt_1585219068220_0004_m_000004_0,attempt_1585219068220_0004_m_000000_0 sent hash and received reply
+2020-03-26 11:06:45,141 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000002_0 decomp: 1776391 len: 1776395 to MEMORY
+2020-03-26 11:06:45,142 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 1776391 bytes from map-output for attempt_1585219068220_0004_m_000002_0
+2020-03-26 11:06:45,142 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 1776391, inMemoryMapOutputs.size() -> 2, commitMemory -> 1707999, usedMemory ->3484390
+2020-03-26 11:06:45,144 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000005_0 decomp: 2497195 len: 2497199 to MEMORY
+2020-03-26 11:06:45,145 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2497195 bytes from map-output for attempt_1585219068220_0004_m_000005_0
+2020-03-26 11:06:45,145 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2497195, inMemoryMapOutputs.size() -> 3, commitMemory -> 3484390, usedMemory ->5981585
+2020-03-26 11:06:45,146 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000003_0 decomp: 1892780 len: 1892784 to MEMORY
+2020-03-26 11:06:45,147 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 1892780 bytes from map-output for attempt_1585219068220_0004_m_000003_0
+2020-03-26 11:06:45,147 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 1892780, inMemoryMapOutputs.size() -> 4, commitMemory -> 5981585, usedMemory ->7874365
+2020-03-26 11:06:45,154 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000004_0 decomp: 2630683 len: 2630687 to MEMORY
+2020-03-26 11:06:45,155 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2630683 bytes from map-output for attempt_1585219068220_0004_m_000004_0
+2020-03-26 11:06:45,155 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2630683, inMemoryMapOutputs.size() -> 5, commitMemory -> 7874365, usedMemory ->10505048
+2020-03-26 11:06:45,156 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000000_0 decomp: 2622133 len: 2622137 to MEMORY
+2020-03-26 11:06:45,157 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2622133 bytes from map-output for attempt_1585219068220_0004_m_000000_0
+2020-03-26 11:06:45,157 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2622133, inMemoryMapOutputs.size() -> 6, commitMemory -> 10505048, usedMemory ->13127181
+2020-03-26 11:06:45,158 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 20ms
+2020-03-26 11:07:14,685 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 1 new map-outputs
+2020-03-26 11:07:14,685 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:07:14,685 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:07:14,687 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000009_0 sent hash and received reply
+2020-03-26 11:07:14,688 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000009_0 decomp: 2538644 len: 2538648 to MEMORY
+2020-03-26 11:07:14,690 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2538644 bytes from map-output for attempt_1585219068220_0004_m_000009_0
+2020-03-26 11:07:14,690 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2538644, inMemoryMapOutputs.size() -> 7, commitMemory -> 13127181, usedMemory ->15665825
+2020-03-26 11:07:14,690 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 5ms
+2020-03-26 11:07:15,686 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:07:15,686 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:07:15,686 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 2 new map-outputs
+2020-03-26 11:07:15,688 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000007_0 sent hash and received reply
+2020-03-26 11:07:15,689 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000007_0 decomp: 2866389 len: 2866393 to MEMORY
+2020-03-26 11:07:15,690 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2866389 bytes from map-output for attempt_1585219068220_0004_m_000007_0
+2020-03-26 11:07:15,690 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2866389, inMemoryMapOutputs.size() -> 8, commitMemory -> 15665825, usedMemory ->18532214
+2020-03-26 11:07:15,691 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 4ms
+2020-03-26 11:07:15,691 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:07:15,691 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:07:15,693 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000006_0 sent hash and received reply
+2020-03-26 11:07:15,693 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000006_0 decomp: 2498356 len: 2498360 to MEMORY
+2020-03-26 11:07:15,694 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2498356 bytes from map-output for attempt_1585219068220_0004_m_000006_0
+2020-03-26 11:07:15,694 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2498356, inMemoryMapOutputs.size() -> 9, commitMemory -> 18532214, usedMemory ->21030570
+2020-03-26 11:07:15,695 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 4ms
+2020-03-26 11:07:16,688 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 1 new map-outputs
+2020-03-26 11:07:16,688 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:07:16,688 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:07:16,690 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000008_0 sent hash and received reply
+2020-03-26 11:07:16,690 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000008_0 decomp: 2594536 len: 2594540 to MEMORY
+2020-03-26 11:07:16,691 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2594536 bytes from map-output for attempt_1585219068220_0004_m_000008_0
+2020-03-26 11:07:16,691 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2594536, inMemoryMapOutputs.size() -> 10, commitMemory -> 21030570, usedMemory ->23625106
+2020-03-26 11:07:16,691 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 4ms
+2020-03-26 11:07:19,692 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 1 new map-outputs
+2020-03-26 11:07:19,692 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:07:19,693 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:07:19,699 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000010_0 sent hash and received reply
+2020-03-26 11:07:19,701 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000010_0 decomp: 2585010 len: 2585014 to MEMORY
+2020-03-26 11:07:19,705 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2585010 bytes from map-output for attempt_1585219068220_0004_m_000010_0
+2020-03-26 11:07:19,705 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2585010, inMemoryMapOutputs.size() -> 11, commitMemory -> 23625106, usedMemory ->26210116
+2020-03-26 11:07:19,706 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 14ms
+2020-03-26 11:07:54,742 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:07:54,742 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:07:54,745 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000013_0 sent hash and received reply
+2020-03-26 11:07:54,745 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 1 new map-outputs
+2020-03-26 11:07:54,746 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000013_0 decomp: 1725495 len: 1725499 to MEMORY
+2020-03-26 11:07:54,747 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 1725495 bytes from map-output for attempt_1585219068220_0004_m_000013_0
+2020-03-26 11:07:54,747 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 1725495, inMemoryMapOutputs.size() -> 12, commitMemory -> 26210116, usedMemory ->27935611
+2020-03-26 11:07:54,747 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 5ms
+2020-03-26 11:07:55,746 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:07:55,746 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:07:55,746 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 2 new map-outputs
+2020-03-26 11:07:55,747 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000012_0 sent hash and received reply
+2020-03-26 11:07:55,748 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000012_0 decomp: 1702296 len: 1702300 to MEMORY
+2020-03-26 11:07:55,748 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 1702296 bytes from map-output for attempt_1585219068220_0004_m_000012_0
+2020-03-26 11:07:55,748 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 1702296, inMemoryMapOutputs.size() -> 13, commitMemory -> 27935611, usedMemory ->29637907
+2020-03-26 11:07:55,749 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 2ms
+2020-03-26 11:07:55,749 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:07:55,749 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:07:55,750 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000011_0 sent hash and received reply
+2020-03-26 11:07:55,751 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000011_0 decomp: 3067965 len: 3067969 to MEMORY
+2020-03-26 11:07:55,752 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 3067965 bytes from map-output for attempt_1585219068220_0004_m_000011_0
+2020-03-26 11:07:55,752 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 3067965, inMemoryMapOutputs.size() -> 14, commitMemory -> 29637907, usedMemory ->32705872
+2020-03-26 11:07:55,752 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 4ms
+2020-03-26 11:08:29,874 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 1 new map-outputs
+2020-03-26 11:08:29,874 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:08:29,874 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:08:29,876 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000015_0 sent hash and received reply
+2020-03-26 11:08:29,877 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000015_0 decomp: 2867690 len: 2867694 to MEMORY
+2020-03-26 11:08:29,878 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2867690 bytes from map-output for attempt_1585219068220_0004_m_000015_0
+2020-03-26 11:08:29,878 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2867690, inMemoryMapOutputs.size() -> 15, commitMemory -> 32705872, usedMemory ->35573562
+2020-03-26 11:08:29,878 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 4ms
+2020-03-26 11:08:31,876 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 1 new map-outputs
+2020-03-26 11:08:31,876 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:08:31,876 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:08:31,878 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000014_0 sent hash and received reply
+2020-03-26 11:08:31,878 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000014_0 decomp: 1695666 len: 1695670 to MEMORY
+2020-03-26 11:08:31,879 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 1695666 bytes from map-output for attempt_1585219068220_0004_m_000014_0
+2020-03-26 11:08:31,880 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 1695666, inMemoryMapOutputs.size() -> 16, commitMemory -> 35573562, usedMemory ->37269228
+2020-03-26 11:08:31,880 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 4ms
+2020-03-26 11:08:32,879 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:08:32,879 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 1 new map-outputs
+2020-03-26 11:08:32,879 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:08:32,883 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000016_0 sent hash and received reply
+2020-03-26 11:08:32,885 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000016_0 decomp: 2538902 len: 2538906 to MEMORY
+2020-03-26 11:08:32,891 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2538902 bytes from map-output for attempt_1585219068220_0004_m_000016_0
+2020-03-26 11:08:32,891 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2538902, inMemoryMapOutputs.size() -> 17, commitMemory -> 37269228, usedMemory ->39808130
+2020-03-26 11:08:32,892 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 13ms
+2020-03-26 11:09:07,344 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 2 new map-outputs
+2020-03-26 11:09:07,345 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 2 to fetcher#1
+2020-03-26 11:09:07,345 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 2 of 2 to dell:13562 to fetcher#1
+2020-03-26 11:09:07,350 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000018_0,attempt_1585219068220_0004_m_000017_0 sent hash and received reply
+2020-03-26 11:09:07,351 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000018_0 decomp: 1696529 len: 1696533 to MEMORY
+2020-03-26 11:09:07,354 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 1696529 bytes from map-output for attempt_1585219068220_0004_m_000018_0
+2020-03-26 11:09:07,354 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 1696529, inMemoryMapOutputs.size() -> 18, commitMemory -> 39808130, usedMemory ->41504659
+2020-03-26 11:09:07,356 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000017_0 decomp: 2740991 len: 2740995 to MEMORY
+2020-03-26 11:09:07,358 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2740991 bytes from map-output for attempt_1585219068220_0004_m_000017_0
+2020-03-26 11:09:07,358 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2740991, inMemoryMapOutputs.size() -> 19, commitMemory -> 41504659, usedMemory ->44245650
+2020-03-26 11:09:07,358 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 13ms
+2020-03-26 11:09:09,348 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1585219068220_0004_r_000000_0: Got 1 new map-outputs
+2020-03-26 11:09:09,348 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning dell:13562 with 1 to fetcher#1
+2020-03-26 11:09:09,348 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 1 of 1 to dell:13562 to fetcher#1
+2020-03-26 11:09:09,352 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1585219068220_0004&reduce=0&map=attempt_1585219068220_0004_m_000019_0 sent hash and received reply
+2020-03-26 11:09:09,353 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#1 about to shuffle output of map attempt_1585219068220_0004_m_000019_0 decomp: 2980704 len: 2980708 to MEMORY
+2020-03-26 11:09:09,356 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput: Read 2980704 bytes from map-output for attempt_1585219068220_0004_m_000019_0
+2020-03-26 11:09:09,356 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2980704, inMemoryMapOutputs.size() -> 20, commitMemory -> 44245650, usedMemory ->47226354
+2020-03-26 11:09:09,356 INFO [fetcher#1] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: dell:13562 freed by fetcher#1 in 8ms
+2020-03-26 11:09:09,357 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: EventFetcher is interrupted.. Returning
+2020-03-26 11:09:09,427 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: finalMerge called with 20 in-memory map-outputs and 0 on-disk map-outputs
+2020-03-26 11:09:09,449 INFO [main] org.apache.hadoop.mapred.Merger: Merging 20 sorted segments
+2020-03-26 11:09:09,450 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 20 segments left of total size: 47226254 bytes
+2020-03-26 11:09:10,640 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: Merged 20 segments, 47226354 bytes to disk to satisfy reduce memory limit
+2020-03-26 11:09:10,641 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: Merging 1 files, 47226320 bytes from disk
+2020-03-26 11:09:10,641 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: Merging 0 segments, 0 bytes from memory into reduce
+2020-03-26 11:09:10,641 INFO [main] org.apache.hadoop.mapred.Merger: Merging 1 sorted segments
+2020-03-26 11:09:10,768 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 47226311 bytes
