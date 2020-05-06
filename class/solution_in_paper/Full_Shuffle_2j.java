@@ -29,9 +29,12 @@ public class Full_Shuffle_2j {
         
 /*job1*/
 	 public static class MyMapper extends Mapper<LongWritable,Text,Text,Text>{
+                
+     
 		@Override
 		protected void setup(Mapper<LongWritable, Text, Text, Text>.Context context)
 				throws IOException, InterruptedException {
+   
 			super.setup(context);
 		}
 		@Override
@@ -39,52 +42,52 @@ public class Full_Shuffle_2j {
 				throws IOException, InterruptedException {
 			String valueStr=value.toString();
 			String [] values=valueStr.split("	");
-			byte[] decryptK=JAES.decrypt(JAES.parseHexStr2Byte(values[29]), password);
+			byte[] decryptK=JAES.decrypt(JAES.parseHexStr2Byte(values[0]), password);
 			String s =new String(decryptK).trim();
-			if(! S_key_set.contains(s)){
-				S_key_set.add(s);
-			}
-			context.write(new Text(values[29]), new Text(new String(JAES.parseByte2HexStr(encryptV))));
+			context.write(new Text(values[0]), new Text(new String(JAES.parseByte2HexStr(encryptV))));
 		}
 		@Override
 		protected void cleanup(Mapper<LongWritable, Text, Text, Text>.Context context)
 			throws IOException, InterruptedException {
-		// TODO Auto-generated method stub
-			 for (String entry : key_set){
-					if(! S_key_set.contains(entry)){
-						byte[] encryptK=JAES.encrypt(entry, password);
-						byte[] encryptV=JAES.encrypt("0", password);
-						context.write(new Text(new String(JAES.parseByte2HexStr(encryptK))), new Text(new String(JAES.parseByte2HexStr(encryptV))));
-					}
-				}
 		super.cleanup(context);
 		}
 	}
 	public static class ShuffleReduce extends Reducer<Text,Text,Text,Text>{
+                static int Max = 0;
+                static String[] strarr = new String[1000];
+                static int num = 0;
+                //static ArrayList<String> S_key_set = new ArrayList<String>();
 		@Override
 		protected void setup(Reducer<Text,Text, Text, Text>.Context context)
 				throws IOException, InterruptedException {
 			// TODO Auto-generated method stub
+                        
+                        //S_key_set.add("1111");
 			super.setup(context);
 		}
 		@Override
 		protected void reduce(Text key, Iterable<Text>values,Context context) throws IOException, InterruptedException {
-			int max=0;
 			for(Text v:values){
 				byte[] decryptV=JAES.decrypt(JAES.parseHexStr2Byte(v.toString()), password);
 				String s=new String(decryptV).trim();
                                 int keynum =Integer.parseInt(s);
-                                if(max < keynum){
-                                    max = keynum;
+                                if(Max < keynum){
+                                    Max = keynum;
                                   }
 				
 			}
+
+                        String[] str = key.toString().split("%");
+                        for(int i=0;i<str.length;i++){
+                            strarr[num] = str[i];
+                            num++;
+                        }
+
                         for (String entry : key_set){
-                                byte[] encryptV=JAES.encrypt(String.valueOf(max), password);
-				context.write(new Text(entry), new Text(new String(JAES.parseByte2HexStr(encryptV))));
                                 
 				
-                     }
+                                
+                          }
 			
 				
 		}	
@@ -92,11 +95,18 @@ public class Full_Shuffle_2j {
 		protected void cleanup(Reducer<Text, Text, Text, Text>.Context context)
 				throws IOException, InterruptedException {
 			// TODO Auto-generated method stub
-
+                        for(int i= 0;i<num;i++){
+                           String enkey = strarr[i];
+                           byte[] encryptV=JAES.encrypt(String.valueOf(Max), password);
+                           context.write(new Text(enkey), new Text(new String(JAES.parseByte2HexStr(encryptV))));
+                           
+                        }
 			super.cleanup(context);
 		}
 	}
 	static class MyCombiner extends Reducer<Text,Text,Text,Text>{
+                static ArrayList<String> S_key_set = new ArrayList<String>();
+                static String key_set = "";
 		@Override
 		protected void setup(Reducer<Text, Text, Text, Text>.Context context) throws IOException, InterruptedException {
 			// TODO Auto-generated method stub
@@ -104,21 +114,22 @@ public class Full_Shuffle_2j {
 		}
 		@Override
 		protected void reduce(Text key, Iterable<Text> values,Context context) throws IOException, InterruptedException {
+                        S_key_set.add(key.toString());
 			int count=0;
 			for(Text v:values){
 				count+=1;
 			}
                         byte[] decryptK=JAES.decrypt(JAES.parseHexStr2Byte(key.toString()), password);
                         String keyStr=new String(decryptK).trim();
-                        byte[] encryptV=JAES.encrypt(keyStr + "#" +String.valueOf(count), password);
-                        key_set.add(JAES.parseByte2HexStr(encryptV));         
-                        
+                        byte[] encryptV=JAES.encrypt(key + "#" +String.valueOf(count), password);
+                        key_set = key_set + new String(JAES.parseByte2HexStr(encryptV)) + "%";         
+                       
 		}
 		@Override
 		protected void cleanup(Reducer<Text, Text, Text, Text>.Context context)
 				throws IOException, InterruptedException {
                         byte[] encryptV=JAES.encrypt(String.valueOf(S_key_set.size()), password);
-			context.write(new Text("Knum"),new Text(new String(JAES.parseByte2HexStr(encryptV))));
+			context.write(new Text(key_set),new Text(new String(JAES.parseByte2HexStr(encryptV))));
 			super.cleanup(context);
 		}
 	}
@@ -132,6 +143,7 @@ public class Full_Shuffle_2j {
 	}
 /*job2*/
 	 public static class MyMapper2 extends Mapper<LongWritable,Text,Text,Text>{
+                        static ArrayList<String> S_key_set2 = new ArrayList<String>();
 			@Override
 			protected void setup(Mapper<LongWritable, Text, Text, Text>.Context context)
 					throws IOException, InterruptedException {
@@ -162,7 +174,8 @@ public class Full_Shuffle_2j {
 			@Override
 			protected void cleanup(Mapper<LongWritable, Text, Text, Text>.Context context)
 			throws IOException, InterruptedException {
-				int p = MAX[0]-S_key_set2.size();
+                                int fakenum = 16;
+				int p = MAX[0]-S_key_set2.size()+fakenum;
 				for(int i=0;i<numReduceTasks;i++){
 					for(int j =0;j<p;j++){
                                              byte[] encryptK=JAES.encrypt("FAKE", password);

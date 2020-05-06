@@ -29,15 +29,8 @@ public class Middle_Shuffle {
 	static byte[] encryptC=JAES.encrypt("_1", password);
 	 static String dummyStr = "321";
 	 static byte[] encryptD=JAES.encrypt(dummyStr, password);
-	 static int MAX = 200000;
-	 static int num0 = 0;
-	 static int num1 = 0;
-	 static int num2 = 0;
-	 static int num3 = 0;
-	 static int num4 = 0;
-	 static int num5 = 0;
-	 static int num6 = 0;
-	 static int num7 = 0;
+	 
+	 
 /*job1*/
 	 public static class MyMapper extends Mapper<LongWritable,Text,Text,Text>{
 		@Override
@@ -51,7 +44,7 @@ public class Middle_Shuffle {
 				throws IOException, InterruptedException {
 			String valueStr=value.toString();
 			String [] values=valueStr.split("	");
-			context.write(new Text(values[1]), new Text(new String(JAES.parseByte2HexStr(encryptC))));
+			context.write(new Text(values[2]), new Text(new String(JAES.parseByte2HexStr(encryptC))));
 		}
 		@Override
 		protected void cleanup(Mapper<LongWritable, Text, Text, Text>.Context context)
@@ -69,12 +62,12 @@ public class Middle_Shuffle {
 			// TODO Auto-generated method stub
 			super.setup(context);
 		}
-		@Override
-		protected void reduce(Text key, Iterable<Text>values,Context context) throws IOException, InterruptedException {
-			for(Text v:values){
-				context.write(key, v);	
-			}
-		}	
+		//@Override
+		//protected void reduce(Text key, Iterable<Text>values,Context context) throws IOException, InterruptedException {
+		//	for(Text v:values){
+		//		context.write(key, v);	
+		//	}
+		//}	
 		@Override
 		protected void cleanup(Reducer<Text, Text, Text, Text>.Context context)
 				throws IOException, InterruptedException {
@@ -94,6 +87,15 @@ public class Middle_Shuffle {
 	}
 /*job2*/
 	 public static class MyMapper2 extends Mapper<LongWritable,Text,Text,Text>{
+                       static int num0 = 0;
+	               static int num1 = 0;
+	               static int num2 = 0;
+	               static int num3 = 0;
+	               static int num4 = 0;
+	               static int num5 = 0;
+	               static int num6 = 0;
+	               static int num7 = 0;
+                       static int MAX = 0;
 			@Override
 			protected void setup(Mapper<LongWritable, Text, Text, Text>.Context context)
 					throws IOException, InterruptedException {
@@ -119,6 +121,7 @@ public class Middle_Shuffle {
 			@Override
 			protected void cleanup(Mapper<LongWritable, Text, Text, Text>.Context context)
 			throws IOException, InterruptedException {
+                                MAX=Math.max(num0,Math.max(num1,Math.max(num2,Math.max(num3,Math.max(num4,Math.max(num5,Math.max(num6,num7)))))));
 				byte[] R1 = JAES.encrypt("0", password);
 				byte[] R2 = JAES.encrypt("1", password);
 				byte[] R3 = JAES.encrypt("2", password);
@@ -264,7 +267,7 @@ public class Middle_Shuffle {
     	
     	job1.setReducerClass(ShuffleReduce.class);
     	job1.setOutputKeyClass(Text.class);
-    	job1.setNumReduceTasks(7);//reduce
+    	job1.setNumReduceTasks(1);//reduce
     	job1.setOutputValueClass(Text.class);
     	
     	FileOutputFormat.setOutputPath(job1, new Path(otherArgs[otherArgs.length - 2]));

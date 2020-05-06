@@ -1,0 +1,14 @@
+			age	pob	im	passN	pickupD
+base			47	40	42	119	122
+base_C			36	32	28	101	106
+SafeShuffle		41	35	34	121	126
+SafeShuffle(8)		45	38	34	148	143
+SafeShuffle(16)		48	40	36	151	143
+SafeShuffle(32)		55	45	37	158	145
+StrongShuffle		56	52	49	234	243
+StrongShuffle(8)	59	53	51	234	245
+StrongShuffle(16)	62	51	51	235	245
+StrongShuffle(32)	63	52	52	239	247
+SIM			318	316	308	654	669
+S&B(offline)		142	113	94	335	357
+online			49	42	42	121	129

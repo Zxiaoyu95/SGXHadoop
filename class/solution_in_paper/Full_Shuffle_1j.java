@@ -28,35 +28,16 @@ public class Full_Shuffle_1j {
 			@Override
 			protected void setup(Mapper<LongWritable, Text, Text, Text>.Context context)
 					throws IOException, InterruptedException {
-				//passenN7
-//				key_set.add("9");key_set.add("6");key_set.add("5");key_set.add("4");
-//				key_set.add("3");key_set.add("2");key_set.add("1");key_set.add("0");
-//				key_set.add("208");key_set.add("255");
-				//pickupD5
-//			    key_set.add("2013-1-1");key_set.add("2013-1-2");key_set.add("2013-1-3");key_set.add("2013-1-4");key_set.add("2013-1-5");key_set.add("2013-1-6");key_set.add("2013-1-7");key_set.add("2013-1-8");
-//				key_set.add("2013-1-9");key_set.add("2013-1-10");key_set.add("2013-1-11");key_set.add("2013-1-12");key_set.add("2013-1-13");key_set.add("2013-1-14");key_set.add("2013-1-15");key_set.add("2013-1-16");
-//			    key_set.add("2013-1-17");key_set.add("2013-1-18");key_set.add("2013-1-19");key_set.add("2013-1-20");key_set.add("2013-1-21");key_set.add("2013-1-22");key_set.add("2013-1-23");key_set.add("2013-1-24");
-//				key_set.add("2013-1-25");key_set.add("2013-1-26");key_set.add("2013-1-27");key_set.add("2013-1-28");key_set.add("2013-1-29");key_set.add("2013-1-30");key_set.add("2013-1-31");
-				//dAge1
-//		        key_set.add("7");key_set.add("6");key_set.add("5");key_set.add("4");
-//		        key_set.add("3");key_set.add("2");key_set.add("1");key_set.add("0");
-				//dPOB35
-//				key_set.add("6");key_set.add("5");key_set.add("4");
-// 				key_set.add("3");key_set.add("2");key_set.add("1");key_set.add("0");
-				//iMarital29
-				key_set.add("4");key_set.add("3");key_set.add("2");key_set.add("1");key_set.add("0");
+				
 				super.setup(context);
 			}
 			@Override
 			protected void map(LongWritable key, Text value, Context context)
 					throws IOException, InterruptedException {
-				String valueStr=value.toString();
+				String valueStr=value.toString().trim();
 				String [] values=valueStr.split("	");
-				byte[] decryptK=JAES.decrypt(JAES.parseHexStr2Byte(values[29]), password);
-				String strK =new String(decryptK).trim();
-				if(! S_key_set.contains(strK)){
-					S_key_set.add(strK);
-				}		
+				byte[] decryptK=JAES.decrypt(JAES.parseHexStr2Byte(values[1]), password);
+				String strK =new String(decryptK).trim();		
 				int r=(strK.hashCode()&Integer.MAX_VALUE)%numReduceTasks;
 				byte[] encryptK=JAES.encrypt(strK+"_"+r+"#"+r, password);
 				context.write(new Text(new String(JAES.parseByte2HexStr(encryptK))),new Text(new String(JAES.parseByte2HexStr(encryptV))));
@@ -74,8 +55,8 @@ public class Full_Shuffle_1j {
 			protected void setup(Reducer<Text,Text, Text, Text>.Context context)
 					throws IOException, InterruptedException {
 				// TODO Auto-generated method stub
-				super.setup(context);
 			
+				super.setup(context);
 			}
 			@Override
 			protected void reduce(Text key, Iterable<Text>values,Context context) throws IOException, InterruptedException {
@@ -117,9 +98,28 @@ public class Full_Shuffle_1j {
 			}
 		}
 		static class MyCombiner extends Reducer<Text,Text,Text,Text>{
+                        static ArrayList<String> key_set = new ArrayList<String>();
+                        static ArrayList<String> S_key_set = new ArrayList<String>();
 			@Override
 			protected void setup(Reducer<Text, Text, Text, Text>.Context context) throws IOException, InterruptedException {
 				// TODO Auto-generated method stub
+                                //passenN7
+				//key_set.add("9");key_set.add("6");key_set.add("5");key_set.add("4");
+				//key_set.add("3");key_set.add("2");key_set.add("1");key_set.add("0");
+				//key_set.add("208");key_set.add("255");
+				//pickupD5
+			        key_set.add("2013-1-1");key_set.add("2013-1-2");key_set.add("2013-1-3");key_set.add("2013-1-4");key_set.add("2013-1-5");key_set.add("2013-1-6");key_set.add("2013-1-7");key_set.add("2013-1-8");
+				key_set.add("2013-1-9");key_set.add("2013-1-10");key_set.add("2013-1-11");key_set.add("2013-1-12");key_set.add("2013-1-13");key_set.add("2013-1-14");key_set.add("2013-1-15");key_set.add("2013-1-16");
+			        key_set.add("2013-1-17");key_set.add("2013-1-18");key_set.add("2013-1-19");key_set.add("2013-1-20");key_set.add("2013-1-21");key_set.add("2013-1-22");key_set.add("2013-1-23");key_set.add("2013-1-24");
+				key_set.add("2013-1-25");key_set.add("2013-1-26");key_set.add("2013-1-27");key_set.add("2013-1-28");key_set.add("2013-1-29");key_set.add("2013-1-30");key_set.add("2013-1-31");
+				//dAge1
+		        //key_set.add("7");key_set.add("6");key_set.add("5");key_set.add("4");
+		       // key_set.add("3");key_set.add("2");key_set.add("1");key_set.add("0");
+				//dPOB35
+				//key_set.add("6");key_set.add("5");key_set.add("4");
+ 				//key_set.add("3");key_set.add("2");key_set.add("1");key_set.add("0");
+				//iMarital29
+				//key_set.add("4");key_set.add("3");key_set.add("2");key_set.add("1");key_set.add("0");
 				super.setup(context);
 				
 			}
@@ -133,7 +133,10 @@ public class Full_Shuffle_1j {
 				String keylongstr = new String(decryptK).trim();
 				byte[] encryptV=JAES.encrypt(String.valueOf(count), password);
 				int r=Integer.parseInt(keylongstr.substring(keylongstr.indexOf("#")+1,keylongstr.length()));
-				String mykey = keylongstr.substring(1,keylongstr.indexOf("_"));
+				String mykey = keylongstr.substring(0,keylongstr.indexOf("_"));
+                                if(! S_key_set.contains(mykey)){
+					S_key_set.add(mykey);
+				}
 				for(int i=0;i<numReduceTasks;i++){
 					byte[] encryptK=JAES.encrypt(mykey+"_"+i+"#"+r, password);
 					context.write(new Text(new String(JAES.parseByte2HexStr(encryptK))),new Text(new String(JAES.parseByte2HexStr(encryptV))));
@@ -142,6 +145,10 @@ public class Full_Shuffle_1j {
 			@Override
 			protected void cleanup(Reducer<Text, Text, Text, Text>.Context context)
 					throws IOException, InterruptedException {
+                                 int fakenum = 8;
+                                 for(int i =0;i<fakenum;i++){
+                                       key_set.add("fake"+i);   
+                                  }
 				 for (String entry : key_set){
 					    int r=(entry.hashCode()&Integer.MAX_VALUE)%numReduceTasks;
 						if(! S_key_set.contains(entry)){

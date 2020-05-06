@@ -34,7 +34,7 @@ public class Offline_Phase{
 				throws IOException, InterruptedException {
 			String valueStr=value.toString();
 			String [] values=valueStr.split("	");
-			String valuesV = values[1];			
+			String valuesV = values[2];			
 			context.write(new Text(valuesV), new Text(new String(JAES.parseByte2HexStr(encryptC))));
 		}
 		@Override
