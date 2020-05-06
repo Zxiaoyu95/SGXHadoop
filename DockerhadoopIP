@@ -1,0 +1,137 @@
+docker network create --driver bridge --subnet=172.19.12.0/16 --gateway=172.19.1.1 newnet
+docker network inspect newnet
+docker run --privileged  --device=/dev/isgx --name master --hostname master --network=newnet --ip 172.19.12.10 -d -P -p 50070:50070 -p 8088:8088 -v /home/xidian/class:/home/ -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker1 --hostname worker1 --network=newnet --ip 172.19.12.11 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker2 --hostname worker2 --network=newnet --ip 172.19.12.12 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker3 --hostname worker3 --network=newnet --ip 172.19.12.13 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker4 --hostname worker4 --network=newnet --ip 172.19.12.14 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker5 --hostname worker5 --network=newnet --ip 172.19.12.15 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker6 --hostname worker6 --network=newnet --ip 172.19.12.16 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker7 --hostname worker7 --network=newnet --ip 172.19.12.17 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker8 --hostname worker8 --network=newnet --ip 172.19.12.18 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker9 --hostname worker9 --network=newnet --ip 172.19.12.19 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker10 --hostname worker10 --network=newnet --ip 172.19.12.20 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker11 --hostname worker11 --network=newnet --ip 172.19.12.21 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker12 --hostname worker12 --network=newnet --ip 172.19.12.22 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker13 --hostname worker13 --network=newnet --ip 172.19.12.23 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker14 --hostname worker14 --network=newnet --ip 172.19.12.24 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+docker run --privileged  --device=/dev/isgx --name worker15 --hostname worker15 --network=newnet --ip 172.19.12.25 -d -P  -it xiaoyuzhang321/scone_mr:SGXhadoop2.7new /etc/bootstrap.sh -bash
+###鏈接hadoop0
+docker exec -it master /bin/bash
+docker exec -it worker1 /bin/bash
+docker exec -it slave2 /bin/bash
+docker exec -it slave3 /bin/bash
+docker exec -it slave4 /bin/bash
+docker exec -it slave5 /bin/bash
+docker exec -it slave6 /bin/bash
+docker exec -it slave7 /bin/bash
+
+########更愛/etc/hosts(最後可以腳本)
+#!/bin/bash
+echo 172.19.12.10      master >>/etc/hosts
+echo 172.19.12.11      worker1 >>/etc/hosts
+echo 172.19.12.12      worker2 >>/etc/hosts
+echo 172.19.12.13      worker3 >>/etc/hosts
+echo 172.19.12.14      worker4 >>/etc/hosts
+echo 172.19.12.15      worker5 >>/etc/hosts
+echo 172.19.12.16      worker6 >>/etc/hosts
+echo 172.19.12.17      worker7 >>/etc/hosts
+echo 172.19.12.18      worker8 >>/etc/hosts
+echo 172.19.12.19      worker9 >>/etc/hosts
+echo 172.19.12.20      worker10 >>/etc/hosts
+echo 172.19.12.21      worker11 >>/etc/hosts
+echo 172.19.12.22      worker12 >>/etc/hosts
+echo 172.19.12.23      worker13 >>/etc/hosts
+echo 172.19.12.24      worker14 >>/etc/hosts
+echo 172.19.12.25      worker15 >>/etc/hosts
+###########每臺 hosts腳本
+vi runhosts.sh
+
+chmod +x runhosts.sh
+./runhosts.sh
+###設置容器見ssh免密碼登錄
+---Master
+cd ~
+#mkdir .ssh
+cd .ssh
+ssh-keygen -t rsa
+cat id_rsa.pub >> authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh/
+---slave(每臺)
+cd ~
+cd .ssh
+ssh-keygen -t rsa
+cat id_rsa.pub >> authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+ssh-copy-id -i id_rsa.pub master
+
+---Master
+scp ~/.ssh/authorized_keys root@slave1:~/.ssh/authorized_keys
+scp ~/.ssh/authorized_keys root@slave2:~/.ssh/authorized_keys
+.......
+###修改core-site.xml
+<property>                    
+   <name>hadoop.tmp.dir</name>           
+   <value>/usr/local/hadoop/tmp</value>
+</property>
+
+########\slaves 
+#yarn-site.xml 添加
+<property>
+  <description>The hostname of the RM.</description>
+  <name>yarn.resourcemanager.hostname</name>
+  <value>Master</value>
+ </property>
+
+## 
+scp -rq /usr/local/hadoop/etc/hadoop  slave1:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  slave2:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  worker5:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  worker6:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  worker7:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  worker8:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  worker9:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  worker10:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  worker11:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  worker12:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  worker13:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  worker14:/usr/local/hadoop/etc
+scp -rq /usr/local/hadoop/etc/hadoop  worker15:/usr/local/hadoop/etc
+
+.....
+
+#!/bin/bash
+docker stop master
+docker stop worker1
+docker stop worker2
+docker stop worker3
+docker stop worker4
+docker stop worker5
+docker stop worker6
+docker stop worker7
+docker stop worker8
+docker stop worker9
+docker stop worker10
+docker stop worker11
+docker stop worker12
+docker stop worker13
+docker stop worker14
+docker stop worker15
+
+docker exec -it worker1 /bin/bash ./tmp.sh
+docker exec -it worker2 /bin/bash ./tmp.sh
+docker exec -it worker3 /bin/bash ./tmp.sh
+docker exec -it worker4 /bin/bash ./tmp.sh
+docker exec -it worker5 /bin/bash ./tmp.sh
+docker exec -it worker6 /bin/bash ./tmp.sh
+docker exec -it worker7 /bin/bash ./tmp.sh
+docker exec -it worker8 /bin/bash ./tmp.sh
+docker exec -it worker9 /bin/bash ./tmp.sh
+docker exec -it worker10 /bin/bash ./tmp.sh
+docker exec -it worker11 /bin/bash ./tmp.sh
+docker exec -it worker12 /bin/bash ./tmp.sh
+docker exec -it worker13 /bin/bash ./tmp.sh
+docker exec -it worker14 /bin/bash ./tmp.sh
+docker exec -it worker15 /bin/bash ./tmp.sh
